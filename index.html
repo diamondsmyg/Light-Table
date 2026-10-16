@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Light Table">
+<meta name="theme-color" content="#0f1213">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAC1klEQVR42u3dMU4bQRSAYfvJFTehQFhKzVloKVNyhJQpabkKqZFAFNyDgioFHbIUZ1lsz+y8me/vQuS1d/ZjdmYRyfrtYbuS9hWGQHAIDsEhOASH4BAcgkNwCA4JDsEhOASH4BAcgkNwCA7BIcEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwCA7BITgEh+CQ4ND8NjXf7Pz63Ygf3+v9WZ03Wtf5h/GxyEgkyEhahVENMvhYBgcZqX3YrWiJ3co06on11MQLvarmmtTMITgEh+AQHIJDcAgO9VLBn8p6dl6tQk/DzByCQ3AIDsEhONRmmxY+xMvToyvxbxfbH2YOua0IDsEhOGS3oiKD+3y1+8e/l3/MHNojY+9X4CAjqw846slI5wOOqjJy+YBDcAgOwSE4EjbnSVeWp2ED4bj5eduCj0TPSWMoGYv7yPUEPcaRsfj8ke5nK5uhZHx+5e73r0bWH2aO5tYZ1eYPOFKuQPkYF8eca39aH/1pG/05x6muaOXdEByVLvnxV3SR3RAclSaDY67o3t0QHF3dJg4j1fduKMgodDPqwEeQccBBBtkGBxnlpoTshoKMbx3wu++V2keQMf+wh71XXh9BxpyDT2xMOvYRZHz5FjWXunCsEo11zaUuHKsxvwszfvIwvj5/z1tZPuDoYdrIdSJhQJUeR38y2j+jMI7OKzGOvu8mLZ9dGDvnmBLHOCvQNs+06d94q/N7aephKys4BIear4k1x+L/64zMHIJDcAgOwSE4ZCv7da/3Z//7q/Prd6868lVmDrmtCA7BITgEh+AQHNJO67eHbbmjTzzA0akq9yjMzKGFcJR+vquiIxypPz0Z6RekfCQd1bILUuvT1N9sVXHIglRwCA7BIcEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwCA7BITgEhwSH4BAcgkNwCA7BITgEh+AQHBIcgkNwCA7BITgEh7L3ASJH4dsCpNMhAAAAAElFTkSuQmCC">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAC1klEQVR42u3dMU4bQRSAYfvJFTehQFhKzVloKVNyhJQpabkKqZFAFNyDgioFHbIUZ1lsz+y8me/vQuS1d/ZjdmYRyfrtYbuS9hWGQHAIDsEhOASH4BAcgkNwCA4JDsEhOASH4BAcgkNwCA7BIcEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwCA7BITgEh+CQ4ND8NjXf7Pz63Ygf3+v9WZ03Wtf5h/GxyEgkyEhahVENMvhYBgcZqX3YrWiJ3co06on11MQLvarmmtTMITgEh+AQHIJDcAgO9VLBn8p6dl6tQk/DzByCQ3AIDsEhONRmmxY+xMvToyvxbxfbH2YOua0IDsEhOGS3oiKD+3y1+8e/l3/MHNojY+9X4CAjqw846slI5wOOqjJy+YBDcAgOwSE4EjbnSVeWp2ED4bj5eduCj0TPSWMoGYv7yPUEPcaRsfj8ke5nK5uhZHx+5e73r0bWH2aO5tYZ1eYPOFKuQPkYF8eca39aH/1pG/05x6muaOXdEByVLvnxV3SR3RAclSaDY67o3t0QHF3dJg4j1fduKMgodDPqwEeQccBBBtkGBxnlpoTshoKMbx3wu++V2keQMf+wh71XXh9BxpyDT2xMOvYRZHz5FjWXunCsEo11zaUuHKsxvwszfvIwvj5/z1tZPuDoYdrIdSJhQJUeR38y2j+jMI7OKzGOvu8mLZ9dGDvnmBLHOCvQNs+06d94q/N7aephKys4BIear4k1x+L/64zMHIJDcAgOwSE4ZCv7da/3Z//7q/Prd6868lVmDrmtCA7BITgEh+AQHNJO67eHbbmjTzzA0akq9yjMzKGFcJR+vquiIxypPz0Z6RekfCQd1bILUuvT1N9sVXHIglRwCA7BIcEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwCA7BITgEhwSH4BAcgkNwCA7BITgEh+AQHBIcgkNwCA7BITgEh7L3ASJH4dsCpNMhAAAAAElFTkSuQmCC">
+<title>Light Table</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a phone-held film sheet. Frames scroll in the middle; the prompt dock sits under your thumb; settings slide up from below. */
+:root {
+  --film: #0f1213;
+  --frame: #000;
+  --panel: #1b2023;
+  --edge: #2e363b;
+  --ink: #eceff1;
+  --ink-soft: #97a3ab;
+  --pencil: #f2c230;
+  --pencil-ink: #2b2100;
+  --danger: #ff8a7f;
+  --focus: #7aa8ff;
+  --font-display: "Bricolage Grotesque", -apple-system, system-ui, sans-serif;
+  --font-body: "Instrument Sans", -apple-system, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --sl: max(16px, env(safe-area-inset-left, 0px));
+  --sr: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: dark;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--film); color: var(--ink);
+  font: 400 16px/1.5 var(--font-body);
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-y: none;
+}
+button { font: inherit; color: inherit; }
+button:focus-visible, textarea:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.top {
+  position: sticky; top: 0; z-index: 5;
+  padding: calc(env(safe-area-inset-top, 0px) + 10px) var(--sr) 10px var(--sl);
+  background: var(--film); border-bottom: 1px solid var(--edge);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.top h1 { margin: 0; font: 700 24px/1 var(--font-display); letter-spacing: -0.02em; }
+.top h1 span { background: var(--pencil); color: var(--pencil-ink); padding: 0 .16em; border-radius: 3px; }
+.top .count { font: 500 11px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.iconbtn { width: 44px; height: 44px; border-radius: 22px; border: 1px solid var(--edge); background: var(--panel); display: grid; place-items: center; cursor: pointer; }
+.iconbtn svg { width: 20px; height: 20px; }
+
+main { padding: 14px var(--sr) calc(var(--dock-h, 200px) + 16px) var(--sl); }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.frame { background: var(--frame); border: 1px solid var(--edge); border-radius: 4px; padding: 5px; display: grid; gap: 5px; min-width: 0; cursor: pointer; text-align: left; }
+.frame .shot { border-radius: 2px; overflow: hidden; background: #15191b; display: grid; place-items: center; }
+.frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.frame .meta { font: 400 10px/1.2 var(--font-mono); color: var(--pencil); display: flex; justify-content: space-between; gap: 6px; padding: 0 2px 2px; }
+.developing { color: var(--ink-soft); font: 400 11px/1.4 var(--font-mono); text-align: center; padding: 10px; }
+.developing b { display: block; width: 28px; height: 28px; margin: 0 auto 8px; border-radius: 50%; border: 2px solid var(--edge); border-top-color: var(--pencil); animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty { display: grid; gap: 12px; padding: 20px 2px; }
+.empty h2 { margin: 0; font: 700 22px/1.2 var(--font-display); text-wrap: balance; }
+.empty p { margin: 0; color: var(--ink-soft); }
+.idea { text-align: left; padding: 14px; border-radius: 10px; border: 1px solid var(--edge); background: var(--panel); cursor: pointer; line-height: 1.35; min-height: 44px; }
+
+.dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
+  background: var(--panel); border-top: 1px solid var(--edge);
+  padding: 10px var(--sr) calc(env(safe-area-inset-bottom, 0px) + 10px) var(--sl);
+  display: grid; gap: 10px;
+}
+.styles { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--sr)) 0 calc(-1 * var(--sl)); padding: 0 var(--sr) 0 var(--sl); }
+.styles::-webkit-scrollbar { display: none; }
+.chip { flex: none; min-height: 36px; padding: 0 14px; border-radius: 18px; border: 1px solid var(--edge); background: transparent; font-size: 14px; font-weight: 500; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--film); border-color: var(--ink); }
+.compose { display: flex; gap: 8px; align-items: flex-end; }
+.compose textarea {
+  flex: 1; min-width: 0; resize: none; max-height: 140px; min-height: 48px;
+  font: 16px/1.4 var(--font-body); color: var(--ink); background: var(--film);
+  border: 1px solid var(--edge); border-radius: 22px; padding: 12px 16px;
+}
+.develop { flex: none; height: 48px; padding: 0 18px; border: 0; border-radius: 24px; background: var(--pencil); color: var(--pencil-ink); font: 700 16px/1 var(--font-display); cursor: pointer; }
+.develop:disabled { opacity: .55; }
+.err { color: var(--danger); font-size: 14px; line-height: 1.4; }
+.hint { font: 400 12px/1.3 var(--font-mono); color: var(--ink-soft); display: flex; justify-content: space-between; gap: 8px; }
+
+.scrim { position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,.6); display: flex; align-items: flex-end; }
+.sheet {
+  width: 100%; max-height: 88dvh; overflow-y: auto; background: var(--panel); border-radius: 18px 18px 0 0;
+  padding: 10px var(--sr) calc(env(safe-area-inset-bottom, 0px) + 20px) var(--sl);
+  display: grid; gap: 18px; animation: up .22s ease-out;
+}
+@keyframes up { from { transform: translateY(30px); opacity: .6; } }
+.grab { width: 40px; height: 5px; border-radius: 3px; background: var(--edge); margin: 0 auto; }
+.sheet h2 { margin: 0; font: 700 20px/1 var(--font-display); }
+.label { font: 500 11px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); display: block; margin-bottom: 8px; }
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.seg button { min-height: 64px; border: 1px solid var(--edge); border-radius: 10px; background: transparent; display: grid; justify-items: center; align-content: center; gap: 5px; font-size: 13px; font-weight: 500; cursor: pointer; }
+.seg button i { display: block; border: 1.5px solid currentColor; border-radius: 2px; }
+.seg button[aria-pressed="true"] { border-color: var(--pencil); color: var(--pencil); }
+.sheet select, .sheet input[type=number], .sheet input[type=password] {
+  width: 100%; min-height: 48px; font: 16px var(--font-body); color: var(--ink); background: var(--film);
+  border: 1px solid var(--edge); border-radius: 10px; padding: 10px 12px;
+}
+.sheet input[type=number] { font-family: var(--font-mono); }
+.row2 { display: flex; gap: 8px; }
+.row2 input { flex: 1; min-width: 0; }
+.ghost { min-height: 48px; padding: 0 16px; border: 1px solid var(--edge); border-radius: 10px; background: transparent; font-weight: 500; cursor: pointer; }
+.toggle { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; }
+.toggle input { width: 24px; height: 24px; accent-color: var(--pencil); }
+.sheet p.note { margin: 6px 0 0; font-size: 14px; color: var(--ink-soft); }
+.sheet a { color: var(--focus); }
+.done { min-height: 50px; border: 0; border-radius: 12px; background: var(--pencil); color: var(--pencil-ink); font: 700 17px/1 var(--font-display); cursor: pointer; }
+.danger { color: var(--danger); border-color: var(--danger); }
+
+.viewer { position: fixed; inset: 0; z-index: 30; background: #000; display: grid; grid-template-rows: auto 1fr auto; }
+.viewer .vbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: calc(env(safe-area-inset-top, 0px) + 8px) var(--sr) 8px var(--sl); }
+.viewer .vmeta { font: 400 12px/1.3 var(--font-mono); color: var(--pencil); }
+.viewer .vimg { min-height: 0; display: grid; place-items: center; padding: 0 var(--sr) 0 var(--sl); }
+.viewer .vimg img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; -webkit-touch-callout: default; }
+.viewer .vfoot { padding: 12px var(--sr) calc(env(safe-area-inset-bottom, 0px) + 12px) var(--sl); display: grid; gap: 12px; }
+.viewer .vcap { color: var(--ink-soft); font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; max-height: 4.2em; overflow-y: auto; }
+.viewer .vacts { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; }
+.viewer .vacts .done { min-height: 48px; font-size: 16px; }
+
+@media (prefers-reduced-motion: reduce) { .developing b, .sheet { animation: none; } }
+@media (min-width: 700px) { main, .dock > * { max-width: 760px; margin-inline: auto; width: 100%; } .dock { justify-items: center; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Light <span>Table</span></h1>
+    <div class="count" id="count">0 frames</div>
+  </div>
+  <button class="iconbtn" id="openSettings" aria-label="Settings">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+  </button>
+</header>
+
+<main>
+  <div class="frames" id="frames"></div>
+  <div class="empty" id="empty">
+    <h2>Nothing developed yet</h2>
+    <p>Type what you want to see in the bar below, or tap an idea.</p>
+    <div id="ideas" style="display:grid;gap:8px"></div>
+  </div>
+</main>
+
+<form class="dock" id="dock" novalidate>
+  <div class="styles" id="styles" role="group" aria-label="Style"></div>
+  <div class="err" id="error" role="alert" hidden></div>
+  <div class="compose">
+    <label for="prompt" style="position:absolute;left:-9999px">Prompt</label>
+    <textarea id="prompt" rows="1" enterkeyhint="go" placeholder="Describe a picture…"></textarea>
+    <button class="develop" id="go" type="submit">Develop</button>
+  </div>
+  <div class="hint"><span id="hintFrame">Square · Flux</span><span id="hintKey"></span></div>
+</form>
+
+<div class="scrim" id="settings" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+    <div class="grab"></div>
+    <h2 id="setTitle">Settings</h2>
+    <div><span class="label">Frame</span><div class="seg" id="aspects"></div></div>
+    <div>
+      <label class="label" for="model">Model</label>
+      <select id="model">
+        <option value="flux">Flux (balanced)</option>
+        <option value="turbo">Turbo (fast)</option>
+        <option value="zimage">Z-Image</option>
+        <option value="gptimage">GPT Image</option>
+      </select>
+    </div>
+    <div>
+      <label class="label" for="seed">Seed</label>
+      <div class="row2"><input id="seed" type="number" inputmode="numeric" placeholder="Random each time"><button type="button" class="ghost" id="dice">Roll</button></div>
+    </div>
+    <label class="toggle"><span>Let the model expand my prompt</span><input type="checkbox" id="enhance" checked></label>
+    <div>
+      <label class="label" for="apikey">Pollinations API key</label>
+      <input id="apikey" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Paste key">
+      <p class="note">Get a free key at <a href="https://enter.pollinations.ai" target="_blank" rel="noopener">enter.pollinations.ai</a>. It's saved on this phone only.</p>
+    </div>
+    <div>
+      <span class="label">Contact sheet</span>
+      <button type="button" class="ghost danger" id="clearAll" style="width:100%">Clear all frames</button>
+    </div>
+    <button type="button" class="done" id="closeSettings">Done</button>
+  </div>
+</div>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Frame">
+  <div class="vbar"><span class="vmeta" id="vmeta"></span><button class="iconbtn" id="vclose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="vimg"><img id="vimg" alt=""></div>
+  <div class="vfoot">
+    <div class="vcap" id="vcap"></div>
+    <div class="vacts">
+      <button type="button" class="done" id="vsave">Save to Photos</button>
+      <button type="button" class="ghost" id="vreuse">Reuse</button>
+      <button type="button" class="ghost danger" id="vdel">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const STYLES = [
+  ["None", ""], ["Photo", "photorealistic, 35mm film photograph, natural light"],
+  ["Watercolour", "loose watercolour painting on textured paper"], ["Ink sketch", "black ink pen sketch, cross-hatching"],
+  ["3D render", "soft 3D render, clay materials, studio lighting"], ["Pixel art", "16-bit pixel art, limited palette"],
+  ["Blueprint", "technical blueprint drawing, white lines on blue"]
+];
+const ASPECTS = [["Square", 1024, 1024], ["Portrait", 832, 1216], ["Landscape", 1216, 832]];
+const IDEAS = [
+  "A cozy workbench with an oscilloscope, soldering iron and glowing circuit boards",
+  "A lighthouse on a rocky Lake Superior shore during a thunderstorm",
+  "A tiny robot tending a rooftop vegetable garden at sunrise"
+];
+const $ = id => document.getElementById(id);
+const S = { style: "", aspect: 0, model: "flux", enhance: true };
+const urls = new Map();
+let current = null;
+
+function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function lsSet(k, v) { try { v == null || v === "" ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} }
+try { Object.assign(S, JSON.parse(lsGet("ltm-settings") || "{}")); } catch (e) {}
+function saveSettings() { lsSet("ltm-settings", JSON.stringify({ style: S.style, aspect: S.aspect, model: S.model, enhance: S.enhance })); }
+
+/* ---------- storage: frames live in IndexedDB so they survive closing the app ---------- */
+let dbp = null;
+function db() {
+  if (dbp) return dbp;
+  dbp = new Promise(res => {
+    try {
+      const r = indexedDB.open("light-table", 1);
+      r.onupgradeneeded = () => r.result.createObjectStore("frames", { keyPath: "id" });
+      r.onsuccess = () => res(r.result);
+      r.onerror = () => res(null);
+    } catch (e) { res(null); }
+  });
+  return dbp;
+}
+async function tx(mode, fn) {
+  const d = await db(); if (!d) return null;
+  return new Promise(res => {
+    try {
+      const t = d.transaction("frames", mode); const st = t.objectStore("frames");
+      const r = fn(st); t.oncomplete = () => res(r && r.result); t.onerror = () => res(null);
+    } catch (e) { res(null); }
+  });
+}
+const putFrame = f => tx("readwrite", st => st.put(f));
+const delFrame = id => tx("readwrite", st => st.delete(id));
+const allFrames = () => tx("readonly", st => st.getAll());
+const clearFrames = () => tx("readwrite", st => st.clear());
+
+/* ---------- UI setup ---------- */
+STYLES.forEach(([name, val]) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.textContent = name; b.dataset.val = val;
+  b.onclick = () => { S.style = val; paintStyles(); saveSettings(); };
+  $("styles").append(b);
+});
+function paintStyles() { [...$("styles").children].forEach(c => c.setAttribute("aria-pressed", c.dataset.val === S.style)); }
+ASPECTS.forEach((a, i) => {
+  const b = document.createElement("button"); b.type = "button";
+  const k = 24 / Math.max(a[1], a[2]);
+  b.innerHTML = `<i style="width:${Math.round(a[1]*k)}px;height:${Math.round(a[2]*k)}px"></i>${a[0]}`;
+  b.onclick = () => { S.aspect = i; paintAspects(); saveSettings(); };
+  $("aspects").append(b);
+});
+function paintAspects() { [...$("aspects").children].forEach((c, i) => c.setAttribute("aria-pressed", i === S.aspect)); paintHint(); }
+function paintHint() {
+  $("hintFrame").textContent = `${ASPECTS[S.aspect][0]} · ${$("model").selectedOptions[0].textContent.split(" ")[0]}${$("seed").value ? " · seed " + $("seed").value : ""}`;
+  $("hintKey").textContent = $("apikey").value ? "" : "Add API key in settings";
+}
+IDEAS.forEach(t => {
+  const b = document.createElement("button"); b.type = "button"; b.className = "idea"; b.textContent = t;
+  b.onclick = () => { $("prompt").value = t; grow(); $("prompt").focus(); };
+  $("ideas").append(b);
+});
+
+$("model").value = S.model;
+$("enhance").checked = S.enhance;
+$("apikey").value = lsGet("lt-key") || "";
+paintStyles(); paintAspects();
+
+$("model").onchange = () => { S.model = $("model").value; saveSettings(); paintHint(); };
+$("enhance").onchange = () => { S.enhance = $("enhance").checked; saveSettings(); };
+$("seed").oninput = paintHint;
+$("dice").onclick = () => { $("seed").value = Math.floor(Math.random() * 1e9); paintHint(); };
+$("apikey").oninput = () => { lsSet("lt-key", $("apikey").value.trim()); paintHint(); };
+
+function openSettings() { $("settings").hidden = false; document.body.style.overflow = "hidden"; }
+function closeSettings() { $("settings").hidden = true; document.body.style.overflow = ""; measureDock(); }
+$("openSettings").onclick = openSettings;
+$("closeSettings").onclick = closeSettings;
+$("settings").addEventListener("click", e => { if (e.target === $("settings")) closeSettings(); });
+$("clearAll").onclick = async () => {
+  const btn = $("clearAll");
+  if (btn.dataset.armed !== "1") { btn.dataset.armed = "1"; btn.textContent = "Tap again to delete every frame"; setTimeout(() => { btn.dataset.armed = ""; btn.textContent = "Clear all frames"; }, 3500); return; }
+  await clearFrames(); urls.forEach(u => URL.revokeObjectURL(u)); urls.clear();
+  $("frames").innerHTML = ""; updateCount(); btn.dataset.armed = ""; btn.textContent = "Clear all frames"; closeSettings();
+};
+
+function grow() { const t = $("prompt"); t.style.height = "auto"; t.style.height = Math.min(t.scrollHeight, 140) + "px"; measureDock(); }
+function measureDock() { document.documentElement.style.setProperty("--dock-h", $("dock").offsetHeight + "px"); }
+$("prompt").addEventListener("input", () => { showError(""); grow(); });
+$("prompt").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("dock").requestSubmit(); } });
+window.addEventListener("resize", measureDock);
+measureDock();
+
+function showError(m) { $("error").textContent = m; $("error").hidden = !m; measureDock(); }
+function updateCount() { const n = $("frames").children.length; $("count").textContent = n + (n === 1 ? " frame" : " frames"); $("empty").hidden = n > 0; }
+
+/* ---------- frames ---------- */
+function frameEl(rec) {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "frame"; b.dataset.id = rec.id;
+  b.innerHTML = `<div class="shot" style="aspect-ratio:${rec.w}/${rec.h}"></div><div class="meta"><span>${rec.model}</span><span>${rec.w}×${rec.h}</span></div>`;
+  b.setAttribute("aria-label", "Open frame: " + rec.prompt);
+  if (rec.blob) setImg(b, rec);
+  else b.querySelector(".shot").innerHTML = `<div class="developing"><b></b>Developing…</div>`;
+  return b;
+}
+function setImg(el, rec) {
+  const u = URL.createObjectURL(rec.blob); urls.set(rec.id, u);
+  const shot = el.querySelector(".shot"); shot.innerHTML = "";
+  const img = new Image(); img.src = u; img.alt = ""; shot.append(img);
+  el.onclick = () => openViewer(rec);
+}
+
+async function restore() {
+  const list = (await allFrames()) || [];
+  list.sort((a, b) => b.created - a.created).forEach(r => $("frames").append(frameEl(r)));
+  updateCount();
+}
+
+/* ---------- generation ---------- */
+async function request(url, key, signal) {
+  const res = await fetch(url, { headers: key ? { Authorization: "Bearer " + key } : {}, signal });
+  if (!res.ok) { let d = ""; try { d = (await res.text()).slice(0, 160); } catch (e) {} const er = new Error(d); er.status = res.status; throw er; }
+  const blob = await res.blob();
+  if (!blob.type.startsWith("image/")) { const er = new Error("The service sent back something that isn't an image."); er.status = 0; throw er; }
+  return blob;
+}
+async function generate(j) {
+  const q = new URLSearchParams({ model: j.model, width: j.w, height: j.h, seed: j.seed, nologo: "true", enhance: String(j.enhance) });
+  const p = encodeURIComponent(j.full);
+  const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 150000);
+  try {
+    try { return await request(`https://gen.pollinations.ai/image/${p}?${q}`, j.key, ctrl.signal); }
+    catch (e) { if (j.key && e instanceof TypeError) { const q2 = new URLSearchParams(q); q2.set("key", j.key); return await request(`https://gen.pollinations.ai/image/${p}?${q2}`, "", ctrl.signal); } if (!j.key && (e.status === 401 || e.status === 403 || e instanceof TypeError)) return await request(`https://image.pollinations.ai/prompt/${p}?${q}`, "", ctrl.signal); throw e; }
+  } finally { clearTimeout(t); }
+}
+function explain(e, hadKey) {
+  if (e.name === "AbortError") return "That took too long. Try the Turbo model or a smaller frame.";
+  if (e.status === 401 || e.status === 403) return hadKey ? "Your API key was rejected. Check you copied all of it in Settings." : "This needs a free API key. Tap the settings button at the top and paste yours.";
+  if (e.status === 402) return "Your Pollinations balance has run out. Top it up at enter.pollinations.ai, or switch to Flux.";
+  if (e.status === 429) return "Too many requests. Wait a few seconds and try again.";
+  if (e.status === 400) return "The service didn't accept those settings. Try another model.";
+  if (e.status) return `The image service returned an error (${e.status}).`;
+  if (e instanceof TypeError) {
+    let framed = false; try { framed = window.top !== window.self; } catch (x) { framed = true; }
+    if (framed) return "This preview can't connect to outside services. Open the page from its own web link in Safari or Chrome instead.";
+    if (!hadKey) return "Couldn't reach the image service without a key. Add your free Pollinations API key in settings and try again.";
+    return "Couldn't reach the image service. Check your connection and that your API key is correct.";
+  }
+  return e.message || "Something went wrong. Try again.";
+}
+
+$("dock").addEventListener("submit", async e => {
+  e.preventDefault();
+  const prompt = $("prompt").value.trim();
+  if (!prompt) { showError("Type a prompt first, or tap one of the ideas."); $("prompt").focus(); return; }
+  showError("");
+  const a = ASPECTS[S.aspect];
+  const rec = {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), created: Date.now(),
+    prompt, model: S.model, w: a[1], h: a[2], enhance: S.enhance,
+    seed: $("seed").value ? Number($("seed").value) : Math.floor(Math.random() * 1e9)
+  };
+  const style = S.style;
+  const key = $("apikey").value.trim();
+  const el = frameEl(rec);
+  $("frames").prepend(el); updateCount();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  $("prompt").blur();
+  $("go").disabled = true; $("go").textContent = "Working";
+  try {
+    rec.blob = await generate({ ...rec, key, full: style ? `${prompt}, ${style}` : prompt });
+    setImg(el, rec);
+    await putFrame(rec);
+  } catch (err) {
+    el.remove(); updateCount();
+    showError(explain(err, !!key));
+  } finally { $("go").disabled = false; $("go").textContent = "Develop"; }
+});
+
+/* ---------- viewer ---------- */
+function openViewer(rec) {
+  current = rec;
+  $("vimg").src = urls.get(rec.id); $("vimg").alt = rec.prompt;
+  $("vmeta").textContent = `${rec.model} · ${rec.w}×${rec.h} · seed ${rec.seed}`;
+  $("vcap").textContent = rec.prompt;
+  $("vdel").textContent = "Delete"; $("vdel").dataset.armed = "";
+  $("viewer").hidden = false; document.body.style.overflow = "hidden";
+}
+function closeViewer() { $("viewer").hidden = true; document.body.style.overflow = ""; current = null; }
+$("vclose").onclick = closeViewer;
+$("vsave").onclick = async () => {
+  if (!current) return;
+  const ext = (current.blob.type.split("/")[1] || "jpg").replace("jpeg", "jpg");
+  const file = new File([current.blob], `light-table-${current.seed}.${ext}`, { type: current.blob.type });
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    try { await navigator.share({ files: [file] }); return; } catch (e) { if (e.name === "AbortError") return; }
+  }
+  const a = document.createElement("a"); a.href = urls.get(current.id); a.download = file.name; document.body.append(a); a.click(); a.remove();
+  $("vsave").textContent = "Or press and hold the image";
+  setTimeout(() => { $("vsave").textContent = "Save to Photos"; }, 3000);
+};
+$("vreuse").onclick = () => {
+  if (!current) return;
+  $("prompt").value = current.prompt; $("seed").value = current.seed;
+  S.model = current.model; $("model").value = current.model;
+  const i = ASPECTS.findIndex(a => a[1] === current.w && a[2] === current.h); if (i >= 0) S.aspect = i;
+  saveSettings(); paintAspects(); grow(); closeViewer();
+};
+$("vdel").onclick = async () => {
+  if (!current) return;
+  if ($("vdel").dataset.armed !== "1") { $("vdel").dataset.armed = "1"; $("vdel").textContent = "Sure?"; return; }
+  const id = current.id;
+  await delFrame(id);
+  const u = urls.get(id); if (u) URL.revokeObjectURL(u); urls.delete(id);
+  const el = $("frames").querySelector(`[data-id="${id}"]`); if (el) el.remove();
+  updateCount(); closeViewer();
+};
+document.addEventListener("keydown", e => { if (e.key === "Escape") { if (!$("viewer").hidden) closeViewer(); else if (!$("settings").hidden) closeSettings(); } });
+
+restore();
+</script>
+</body>
+</html>
